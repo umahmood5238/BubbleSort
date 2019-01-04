@@ -9,7 +9,7 @@ public class BubbleSortRunner {
                 System.out.println(num + " ");
             System.out.println();
 
-            BubbleSort.bubbleSort(testArr);
+            BubbleSort.Swap(testArr);
 
             System.out.print("After: ");
             for (int num:testArr)
