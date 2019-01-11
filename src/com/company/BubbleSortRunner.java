@@ -4,9 +4,13 @@ public class BubbleSortRunner {
 
     public static void main(String[] args) {
 
-        int[] intArr = inPlaceSorts.randIntArr(5);
-        double[] doubleArr = inPlaceSorts.randDoubleArr(5);
+        int[] intArr = Sorter.randInt(5);
+        double[] doubleArr = Sorter.randDouble(5);
         String[] stringArr = {"I'm", "a", "java", "student"};
+
+        int[] copyInt = Sorter.copyInt(intArr);
+        double[] copyDouble = Sorter.copyDouble(doubleArr);
+        String[] copyString = Sorter.copyString(stringArr);
 
         System.out.print("Int Array: ");
         for (int num : intArr) {
@@ -26,25 +30,31 @@ public class BubbleSortRunner {
         }
         System.out.println();
 
-        inPlaceSorts.bubbleSort(intArr);
+        Sorter.insertionSort(intArr);
         int[] intArr2 = intArr;
 
-        inPlaceSorts.selectionSort(doubleArr);
-        int[] doubleArr2 = doubleArr;
-    }
-}
-        /*int[] testArr = {8, 6, 7, 5, 3, 0, 9, 10, 1, 2, 3}
-            System.out.print("Before: ");
-            for (int num:testArr)
-                System.out.println(num + " ");
-            System.out.println();
+        Sorter.selectionSort(doubleArr);
+        double[] doubleArr2 = doubleArr;
 
-            BubbleSort.Swap(testArr);
+        Sorter.bubbleSort(stringArr);
+        String[] stringArrArr2 = stringArr;
 
-            System.out.print("After: ");
-            for (int num:testArr)
-                System.out.print(num + " ");
-            System.out.println();
+        System.out.print("Int Array After: ");
+        for (int num:intArr){
+            System.out.print(num+" ");
         }
+        System.out.println();
+
+        System.out.print("Double Array After: ");
+        for (double num:doubleArr){
+            System.out.print(num+" ");
+        }
+        System.out.println();
+
+        System.out.print("String Array After: ");
+        for (String num:stringArr){
+            System.out.print(num+" ");
+        }
+        System.out.println();
     }
 }
