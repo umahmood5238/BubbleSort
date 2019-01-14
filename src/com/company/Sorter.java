@@ -24,23 +24,26 @@ public class Sorter {
     //Copy Methods
     public static int[] copyInt(int[] arr) {
         int[] intCopy = new int[arr.length];
-        for (int i = 0, i <arr.length, i++){
+        for (int i = 0; i <arr.length; i++){
             intCopy[i] = arr[i];
         }
+        return intCopy;
     }
 
     public static double[] copyDouble(double[] arr) {
         double[] doubleCopy = new double[arr.length];
-        for (int i = 0, i <arr.length, i++){
+        for (int i = 0; i <arr.length; i++){
             doubleCopy[i] = arr[i];
         }
+        return doubleCopy;
     }
 
     public static String[] copyString(String[] arr) {
-        String[] intString = new String[arr.length];
-        for (int i = 0, i <arr.length, i++){
-            intString[i] = arr[i];
+        String[] stringCopy = new String[arr.length];
+        for (int i = 0; i <arr.length; i++){
+            stringCopy[i] = arr[i];
         }
+        return stringCopy;
     }
 
     //Sort Methods

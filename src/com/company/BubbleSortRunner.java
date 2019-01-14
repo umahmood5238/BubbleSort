@@ -6,7 +6,7 @@ public class BubbleSortRunner {
 
         int[] intArr = Sorter.randInt(5);
         double[] doubleArr = Sorter.randDouble(5);
-        String[] stringArr = {"I'm", "a", "java", "student"};
+        String[] stringArr = Sorter.randString(5, 5);
 
         int[] copyInt = Sorter.copyInt(intArr);
         double[] copyDouble = Sorter.copyDouble(doubleArr);
@@ -30,13 +30,27 @@ public class BubbleSortRunner {
         }
         System.out.println();
 
+        //sorter with times
+        long selectionStart = 0;
+        long selectionStop = 0;
+        long insertionStart = 0;
+        long insertionStop = 0;
+        long bubbleStart = 0;
+        long bubbleStop = 0;
+
+        insertionStart = System.nanoTime();
         Sorter.insertionSort(intArr);
+        insertionStop = System.nanoTime() - insertionStart;
         int[] intArr2 = intArr;
 
+        selectionStart = System.nanoTime();
         Sorter.selectionSort(doubleArr);
+        selectionStop = System.nanoTime() - selectionStart;
         double[] doubleArr2 = doubleArr;
 
+        bubbleStart = System.nanoTime();
         Sorter.bubbleSort(stringArr);
+        bubbleStop = System.nanoTime() - bubbleStart;
         String[] stringArrArr2 = stringArr;
 
         System.out.print("Int Array After: ");
@@ -44,17 +58,27 @@ public class BubbleSortRunner {
             System.out.print(num+" ");
         }
         System.out.println();
+        System.out.println("Took " + insertionStop);
 
         System.out.print("Double Array After: ");
         for (double num:doubleArr){
             System.out.print(num+" ");
         }
         System.out.println();
+        System.out.println("Took " + selectionStop);
 
         System.out.print("String Array After: ");
         for (String num:stringArr){
             System.out.print(num+" ");
         }
         System.out.println();
+        System.out.println("Took " + bubbleStop);
+
+        System.out.println("sorter race");
+
+        System.out.print("Int Array After: ");
+        for (int num:intArr){
+            System.out.print(num+" ");
+        }
     }
 }
