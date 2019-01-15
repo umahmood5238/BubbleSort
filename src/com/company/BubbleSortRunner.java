@@ -51,7 +51,7 @@ public class BubbleSortRunner {
         bubbleStart = System.nanoTime();
         Sorter.bubbleSort(stringArr);
         bubbleStop = System.nanoTime() - bubbleStart;
-        String[] stringArrArr2 = stringArr;
+        String[] stringArr2 = stringArr;
 
         System.out.print("Int Array After: ");
         for (int num:intArr){
@@ -76,9 +76,49 @@ public class BubbleSortRunner {
 
         System.out.println("sorter race");
 
-        System.out.print("Int Array After: ");
+        intArr = Sorter.randInt(5);
+        copyInt = Sorter.copyInt(intArr);
+
+        System.out.print("Int Array: ");
+        for (int num : intArr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        insertionStart = System.nanoTime();
+        Sorter.insertionSortRace(intArr);
+        insertionStop = System.nanoTime() - insertionStart;
+        int[] intArr3 = intArr;
+
+        selectionStart = System.nanoTime();
+        Sorter.selectionSortRace(intArr);
+        selectionStop = System.nanoTime() - selectionStart;
+        int[] intArr4 = intArr;
+
+        bubbleStart = System.nanoTime();
+        Sorter.bubbleSortRace(intArr);
+        bubbleStop = System.nanoTime() - bubbleStart;
+        int[] intArr5 = intArr;
+
+        System.out.print("Insertion Sort Race: ");
         for (int num:intArr){
             System.out.print(num+" ");
         }
+        System.out.println();
+        System.out.println(insertionStop + " nanoseconds");
+
+        System.out.print("Selection Sort Race: ");
+        for (int num:intArr){
+            System.out.print(num+" ");
+        }
+        System.out.println();
+        System.out.println(selectionStop + " nanoseconds");
+
+        System.out.print("Bubble Sort Race: ");
+        for (int num:intArr){
+            System.out.print(num+" ");
+        }
+        System.out.println();
+        System.out.println(bubbleStop + " nanoseconds");
     }
 }

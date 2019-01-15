@@ -86,6 +86,46 @@ public class Sorter {
         }
     }
 
+    //Sorter race
+    public static void bubbleSortRace(int[] arr) {
+        int count = 1;
+        while (count != 0) {
+            count = 0;
+            for (int i = 0; i < arr.length - 1; i++) {
+                if (arr[i]>(arr[i + 1])) {
+                    swap(arr, i, i + 1);
+                    count++;
+                }
+            }
+        }
+    }
+
+    public static void selectionSortRace(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int minIter = i;
+            for (int j = i; j < arr.length; j++) {
+                if (arr[j] < arr[minIter]) {
+                    minIter = j;
+                }
+            }
+            if (minIter != i) {
+                swap(arr, i, minIter);
+            }
+        }
+    }
+
+    public static void insertionSortRace(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j > 0; j--) {
+                if (arr[j - 1] > arr[j]) {
+                    swap(arr, j - 1, j);
+                } else {
+                    j = 0;
+                }
+            }
+        }
+    }
+
     //Array Generators
     public static int[] randInt(int count) {
         int[] arr = new int[count];
